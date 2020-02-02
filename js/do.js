@@ -1,3 +1,30 @@
+let timer = null
+let startTime = ''
+let endTime = ''
+const label = document.getElementById('avatar_template')
+
+label.addEventListener('touchstart', function () {
+    startTime = +new Date()
+    var canvas = document.getElementById('cvs');
+    var image = canvas.toDataURL("image/png")
+
+    label.src = image;
+    timer = setTimeout(function () {
+        // deleteBtn.style.display = 'block'
+        // alert('xx');
+    }, 700)
+})
+
+label.addEventListener('touchend', function () {
+  endTime = +new Date()
+  clearTimeout(timer)
+  if (endTime - startTime < 700) {
+    // 处理点击事件
+    // label.classList.add('selected')
+    // alert('00');
+  }
+})
+
 document.getElementById('download').onclick = function(ev) {
     if (document.getElementById('avatar_img').src == '') 
         return alert('你还没选头像呢');
