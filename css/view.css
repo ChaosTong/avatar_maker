@@ -22,3 +22,10 @@ body {
     top: 0;
     right: 0;
 }
+#canvas-img{
+    position: absolute;
+    top:0;
+    right: 0;
+    z-index: 300;
+    display: none;
+}
